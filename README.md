@@ -17,3 +17,16 @@ being used by another application.
 Can you export default more than one thing on each file, or can you only export default one thing per file?
 - You can only export default one thing per file.
 But you can export multiple things in a file - named exports.
+
+
+Previously when using .map(), we assigned the new array to a variable, is spread syntax similar? Is it just holding a new array with map?
+- In changeStatus function: .map() is creating a new array and setting it to the useState. {...friend} is creating a new object by copying the old object, and changing the key married.
+
+
+From the example:
+let obj = {a:2, b:6}
+let newObj = {...obj}
+let newObj = {...obj, a: 9}
+
+Is the object deeply copied object?
+- Yes, it spreads all of the obejct, it will copy the whole object - all of the nested elements.
