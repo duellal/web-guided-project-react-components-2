@@ -12,3 +12,8 @@ being used by another application.
 - Navigate into the project folder.
 - Run `npm i` to download the project's dependencies listed in the `package.json`.
 - Run `npm start` to compile the project and spin up a dev server on `http://localhost:1234`.
+
+####Q+A:
+Can you export default more than one thing on each file, or can you only export default one thing per file?
+- You can only export default one thing per file.
+But you can export multiple things in a file - named exports.

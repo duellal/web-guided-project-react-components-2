@@ -1,6 +1,7 @@
 import { v4 as uuid } from 'uuid'
 
 export const hello = 'world'
+export const numbers = [21, 35, 542, 83, 9]
 
 export default [
   {

@@ -6,20 +6,37 @@ import FriendsList from './FriendsList'
 import Search from './Search'
 // 👉 2- Import the dummy data that will power the application.
 // (Tomorrow we'll fetch the data from an API instead.)
-import v4 from '../dummy-data/friends'
+// My code:
+// import v4 from '../dummy-data/friends'
 
+// Class code:
+//{hell, numbers} is the variable hello and the variable numbers being imported
+import friends, { hello, numbers } from '../dummy-data/friends'
 
 export default function App() {
   // 👉 3- Initialize a slice of state to keep track of the data
   // using the dummy data as the initial value of the slice of state
-  const [data, setData] = useState(v4)
+  const [myFriends, setMyFriends] = useState(friends)
 
-  // 👉 4- Initialize a slice to keep track of the value of the search box
+  // 👉 4- Initialize a slice of state to keep track of the value of the search box
   // using an empty string as the initial value of the slice
-  const [search, setSearch] = useState(Search)
+  const [searchValue, setSearchValue] = useState('')
 
   // 👉 5- Build a `changeStatus` function that takes an id and
   // changes the `married` from true to false and viceversa
+  function changeStatue(id) {
+    //Loop over friends and match based on id
+    //If ids match, changed married status
+    //else do nothing
+    setMyFriends(myFriends.map((friend) => {
+      if (friend.id === id) {
+        //spread syntax {...object, key: change}:
+        // Copies the object and you can change a key value by typing in the key: and what you want the value to be
+        return { ...friend, married: !friend.married }
+      }
+      return friend
+    }))
+  }
 
   // STRETCH - Make a helper function that returns
   // a filtered array of friends data (filtering by search term)
